@@ -27,7 +27,7 @@ export const authOptions: NextAuthOptions = {
                 password: { label: 'password', type: 'password' },
             },
 
-            async authhorize(credentials) {
+            async authorize(credentials) {
                 // メールアドレスとパスワードがない場合はエラー
                 if (!credentials?.email || !credentials?.password) {
                     throw new Error('メールアドレスとパスワードが存在しません')

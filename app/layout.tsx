@@ -2,6 +2,8 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import Navigation from '@/app/components/navigation/Navigation'
 import AuthContext from '@/app/context/AuthContext'
+import ToasterContext from '@/app/context/ToasterContext'
+import SignupModal from '@/app/components/modals/SignupModal'
 import getCurrentUser from '@/app/actions/getCurrentUser'
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,6 +18,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html>
       <body className={inter.className}>
+        <AuthContext>
+          {/* Toaster */}
+          <ToasterContext />
+          {/* モーダル */}
+          <SignupModal />
+
         <div>
           <div className="flex min-h-screen flex-col">
             <Navigation currentUser={currentUser} />
@@ -29,6 +37,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             </footer>
           </div>
         </div>
+        </AuthContext>
       </body>
     </html>
   )
