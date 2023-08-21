@@ -4,6 +4,7 @@ import Navigation from '@/app/components/navigation/Navigation'
 import AuthContext from '@/app/context/AuthContext'
 import ToasterContext from '@/app/context/ToasterContext'
 import SignupModal from '@/app/components/modals/SignupModal'
+import LoginModal from '@/app/components/modals/LoginModal'
 import getCurrentUser from '@/app/actions/getCurrentUser'
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,6 +24,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <ToasterContext />
           {/* モーダル */}
           <SignupModal />
+          <LoginModal />
 
         <div>
           <div className="flex min-h-screen flex-col">
