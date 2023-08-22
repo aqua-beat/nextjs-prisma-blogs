@@ -6,12 +6,15 @@ import ToasterContext from '@/app/context/ToasterContext'
 import SignupModal from '@/app/components/modals/SignupModal'
 import LoginModal from '@/app/components/modals/LoginModal'
 import ProfileModal from '@/app/components/modals/ProfileModal'
+import NewPostModal from '@/app/components/modals/NewPostModal'
+import EditPostModal from '@/app/components/modals/EditPostModal'
+import DeletePostModal from './components/modals/DeletePostModal'
 import getCurrentUser from '@/app/actions/getCurrentUser'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Prisma Auth',
-  description: 'Prisma Auth',
+  title: 'Prisma Blog',
+  description: 'Prisma Blog',
 }
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
@@ -27,6 +30,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <SignupModal />
           <LoginModal />
           <ProfileModal currentUser={currentUser} />
+          <NewPostModal />
+          <EditPostModal />
+          <DeletePostModal />
 
         <div>
           <div className="flex min-h-screen flex-col">
@@ -36,7 +42,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
             <footer className="py-5">
               <div className="text-center text-sm">
-                Copyright © All rights reserved | PazuChannel
+                Copyright © All rights reserved | PazuBlogs
               </div>
             </footer>
           </div>
